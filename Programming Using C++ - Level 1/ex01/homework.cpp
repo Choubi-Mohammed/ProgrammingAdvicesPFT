@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/10/18 11:52:17 by shobeedev               shobee4ever      */
-/*   Updated: 2025/10/18 12:08:18 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/10/18 12:14:05 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,17 @@ int main()
 	std::cout << "I Love Programming!\n\n";
 	std::cout << "I promise to be the best developer ever!\n\n";
 	std::cout << "I know it will take some time to practice, but I will achieve my goal.\n\n";
-	std::cout << "Best Regards,\nMohammed Choubi\n";
+	std::cout << "Best Regards,\nMohammed Choubi\n\n";
+
+	std::cout << "ex04\n";
+	std::cout << "*        *\n";
+	std::cout << "*        *\n";
+	std::cout << "*        *\n";
+	std::cout << "**********\n";
+	std::cout << "*        *\n";
+	std::cout << "*        *\n";
+	std::cout << "*        *\n";
+
 	return 0;
 
 }
