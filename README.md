@@ -33,7 +33,7 @@ The main goal of this repository is to:
 * **Debugger:** GDB
 * **Memory Tools:** Valgrind
 * **Editor:** VSCode / Vim
-* **System:** Linux (Fedora)
+* **System:** Linux
 
 ---
 
