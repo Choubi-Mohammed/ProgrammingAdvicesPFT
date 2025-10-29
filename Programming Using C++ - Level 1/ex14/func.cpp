@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/10/28 19:45:54 by shobeedev               shobee4ever      */
-/*   Updated: 2025/10/28 20:11:43 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/10/29 16:57:10 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void tt_cadrInfo()
 	cout << "please enter you age :";
 	cin >> age;
 	cout << "plesae entre your City :";
-	cin >> City;
+	cin.ignore(1,'\n');
+	getline(cin, City);
 	cout << "please entre you Country :";
-	cin >> Country;;
+	getline(cin, Country);
 	cout << "*******************************************\n";
 	cout << "Full Name : " << fullName << endl;
 	cout << "Your Age : " << age << endl;
