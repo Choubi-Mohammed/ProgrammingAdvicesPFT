@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                           ____    _____    */
-/*   calc_ex.cpp                                            |___ \  |___ /    */
+/*   circle_erea_throu_daimter.cpp                          |___ \  |___ /    */
 /*                                                            __) |   |_ \    */
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
-/*   Created: 2025/10/19 17:21:54 by shobeedev               shobee4ever      */
-/*   Updated: 2025/10/19 17:36:48 by shobeedev            tfaaty fi l3oolaa   */
+/*   Created: 2025/10/31 09:55:13 by shobeedev               shobee4ever      */
+/*   Updated: 2025/10/31 09:58:47 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 using namespace std;
+
+float circle_erea_throu_daimter(int d)
+{
+	const float PI = 3.14;
+	float Erea = (PI * pow(d,2))/4;
+	return Erea;
+}
 
 int main()
 {
-	int n1;
-	int n2;
-	cout << "Welcome to our calculate !\n\n";
-	cout << "Please entre the first number N1:";
-	cin >> n1;
-	cout << "Please entre the second number N2:";
-	cin >> n2;
-
-	cout << n1 << " + " << n2 << " = " << n1+n2 << endl;
-	cout << n1 << " - " << n2 << " = " << n1-n2 << endl;
-	cout << n1 << " * " << n2 << " = " << n1*n2 << endl;
-	cout << n1 << " / " << n2 << " = " << n1/n2 << endl;
-	cout << n1 << " % " << n2 << " = " << n1%n2 << endl;
+	int d;
+	cout << "please entre d :";
+	cin >> d;
+	cout << circle_erea_throu_daimter(d) << endl;
 
 	return 0;
-
-
-
 }
