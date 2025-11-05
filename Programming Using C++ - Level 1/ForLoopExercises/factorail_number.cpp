@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/05 16:55:36 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/05 17:02:23 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/05 17:03:57 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	{
 		factorail_number = factorail_number * i;
 	}
-	cout << factorail_number << endl;
+	cout << "The factorial of the given number is: " << factorail_number << endl;
 
-
+	return 0;
 }
