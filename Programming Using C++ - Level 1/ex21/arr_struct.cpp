@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/01 10:40:05 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/01 11:03:06 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/07 17:41:19 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,14 @@ void ReadDataOnePer(stPersone &Per)
 	cout << "please entre you're City :\n";
 	cin >> Per.City;
 }
-void ReadDataArr(stPersone Per[])
+void ReadDataArr(stPersone Per[],int &len)
 {
-	ReadDataOnePer(Per[0]);
-	ReadDataOnePer(Per[1]);
+	cout << "please entre len of arr do you went ? ";
+	cin >> len;
+	for(int i=0;i <= len -1;i++)
+	{
+		ReadDataOnePer(Per[i]);
+	}
 }
 void PrintDataOnePer(stPersone Per)
 {
@@ -44,16 +48,19 @@ void PrintDataOnePer(stPersone Per)
 	cout << "City : " << Per.City << endl;
 	cout << "***************************************\n";
 }
-void PrintDataArr(stPersone Per[])
+void PrintDataArr(stPersone Per[],int len)
 {
-	PrintDataOnePer(Per[0]);
-	PrintDataOnePer(Per[1]);
+	for(int i = 0;i <= len-1;i++)
+	{
+		PrintDataOnePer(Per[i]);
+	}
 }
 
 
 int main()
 {
-	stPersone Per[2];
-	ReadDataArr(Per);
-	PrintDataArr(Per);
+	int len;
+	stPersone Per[5];
+	ReadDataArr(Per,len);
+	PrintDataArr(Per,len);
 }
