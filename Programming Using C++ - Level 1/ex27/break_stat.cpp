@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/09 17:38:48 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/09 17:43:19 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/09 17:53:39 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	int i = 0;
 	while(arr[i])
 	{
+		cout << "iteration = " << i+1 << endl;
 		if (arr[i]==7)
 		{
 			cout << "Found number = " << arr[i] << " at position " << i+1 << endl;
