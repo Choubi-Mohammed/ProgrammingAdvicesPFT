@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/16 17:51:15 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/16 19:43:17 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/16 19:54:04 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,17 @@ void FindPrimNumber(int start,int end)
 	if (start <= 1)
 		start++;
 	int counter =start;
+	int sum = 0;
 	while(counter <= end)
 	{
 		if (PrimOrNot(start,counter) == true)
+		{
+			sum++;
 			cout << counter << " ";
+		}
 		counter++;
 	}
+	cout << "\n the Total Prime number is : " << sum << endl;
 }
 
 int main()
