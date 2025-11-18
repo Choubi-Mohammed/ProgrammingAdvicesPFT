@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/18 17:20:09 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/18 19:28:55 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/18 19:45:24 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void Print_Header()
 
 void Print_Form10Line()
 {
+	Print_Header();
 	cout << "\n\t";
 	int counter = 1;
 	while(counter <= 10)
@@ -38,6 +39,7 @@ void Print(int number)
 }
 void PrinMulti()
 {
+	Print_Form10Line();
 	int i = 1;
 	while(i <= 10)
 	{
@@ -55,7 +57,5 @@ void PrinMulti()
 }
 int main()
 {
-	Print_Header();
-	Print_Form10Line();
 	PrinMulti();
 }
