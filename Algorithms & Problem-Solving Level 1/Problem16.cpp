@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/22 19:15:02 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/22 20:20:39 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/23 17:38:29 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void Guess_3_lett_pass(string PassWord)
 				Word = Word + (char)i;
 				Word = Word + (char)j;
 				Word = Word + (char)k;
+				cout << "Trail[" << counter << "] : " << Word << endl;
 
 				if(Word == PassWord)
 				{
