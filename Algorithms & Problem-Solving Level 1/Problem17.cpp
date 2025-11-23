@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/23 17:52:00 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/23 18:15:00 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/23 19:56:26 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,40 +19,44 @@ void Readtxt(string &text)
 	getline(cin,text);
 }
 
-string EncryptionText(string text)
+string EncryptionText(string text,short EncryptionKey)
 {
-	string Word = "";
+	int len = 0;
+	while(text[len])//length of string
+		len++;
 	int i = 0;
-	int letter;
-	while(text[i])
+	while(i < len)
 	{
-		letter = text[i] + 2;
-		Word = Word + char  (letter);
+		text[i] = char((int) text[i] + EncryptionKey);
 		i++;
 	}
-	return Word;
+	return text;
 }
-string DecryptionText(string text)
+string DecryptionText(string text,short EncryptionKey)
 {
-	string Word =  "";
+	int len = 0;
+	while(text[len])
+		len++;
 	int i = 0;
-	int letter;
-	while(text[i])
+	//its main while the string not equel to null, null always in the last char in string
+	while(i < len)
 	{
-		letter = text[i] - 2;
-		Word = Word + (char)letter;
+		text[i] = char ((int)text[i] - EncryptionKey);
 		i++;
 	}
-	return Word;
+	return text;
 }
 
 int main()
 {
 	string text;
+	short EncryptionKey = 2;
 	Readtxt(text);
+	string EncryptionTextST = EncryptionText(text,EncryptionKey);
+	string DecryptionTextST = DecryptionText(EncryptionTextST,EncryptionKey);
 	cout << "\nText Before Encryption : " << text << endl;
-	cout << "Text After Encryption : "<< EncryptionText(text) << endl;
-	cout << "Text After Decryption : " << DecryptionText(EncryptionText(text)) << endl;
+	cout << "Text After Encryption : "<< EncryptionTextST << endl;
+	cout << "Text After Decryption : " << DecryptionTextST << endl;
 
 
 	return 0;
