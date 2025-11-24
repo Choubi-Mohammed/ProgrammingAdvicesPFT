@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/24 19:45:20 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/24 19:58:12 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/24 21:10:22 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,43 @@ int RandomNumber(int from,int to)
 	return RandomNumber;
 }
 
-void PrintRanLetter()
+enum CharType {Letter = 1,CapLetter = 2,SpeChar = 3,Digit = 4};
+
+char RandomChar(CharType type)
 {
-	int Letter = RandomNumber(97,122);
-	cout << (char)Letter << endl;//casting
+	switch(type)
+	{
+		case CharType::Letter :
+			{
+				return (char) RandomNumber(97,122);
+				break;
+			}
+		case CharType::CapLetter :
+			{
+				return (char) RandomNumber(65,90);
+				break;
+			}
+		case CharType::SpeChar :
+			{
+				return (char) RandomNumber(33,47);
+				break;
+			}
+		case CharType::Digit :
+			{
+				return (char) RandomNumber(48,57);
+				break;
+			}
+	}
+	return '\0';
 }
-void PrintRanCapLetter()
-{
-	int CapLtetter = RandomNumber(65,90);
-	cout << (char) CapLtetter << endl;
-}
-void PrintRanSpecChar()
-{
-	int SpecChar = RandomNumber(33,126);
-	cout << (char) SpecChar<< endl;
-}
-void PrintRanDigit()
-{
-	cout << RandomNumber(1,10);
-}
+
 int main()
 {
 	srand((unsigned) time(NULL));
-	PrintRanLetter();
-	PrintRanCapLetter();
-	PrintRanSpecChar();
-	PrintRanDigit();
+	cout << RandomChar(CharType::Letter) << endl;
+	cout << RandomChar(CharType::CapLetter) << endl;
+	cout << RandomChar(CharType::SpeChar) << endl;
+	cout << RandomChar(CharType::Digit) << endl;
 
 	return 0;
 }
