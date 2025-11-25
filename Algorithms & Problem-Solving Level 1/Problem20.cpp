@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/11/25 17:46:39 by shobeedev               shobee4ever      */
-/*   Updated: 2025/11/25 18:41:22 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/11/25 19:06:03 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ string GenerateWord(CharType type,int len)
 
 void GenerateKey()
 {
-	cout << GenerateWord(CharType::CapLetter,5) + "-";
-	cout << GenerateWord(CharType::CapLetter,5) + "-";
-	cout << GenerateWord(CharType::CapLetter,5) + "-";
-	cout << GenerateWord(CharType::CapLetter,5);
+	cout << GenerateWord(CharType::CapLetter,4) + "-";
+	cout << GenerateWord(CharType::CapLetter,4) + "-";
+	cout << GenerateWord(CharType::CapLetter,4) + "-";
+	cout << GenerateWord(CharType::CapLetter,4);
 }
 
 void NumberOfKeys(int number)
