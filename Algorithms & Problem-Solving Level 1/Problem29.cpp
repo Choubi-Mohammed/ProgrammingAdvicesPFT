@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/01 17:34:09 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/01 17:48:17 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/01 18:29:11 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void PrintArr(int arr[],int len)
 }
 int main()
 {
+	srand((unsigned)time(NULL));
 	int arr1[100],arr2[100],sumArr[100],len;
 	ReadLen(len);
 	RandArr(arr1,len);
