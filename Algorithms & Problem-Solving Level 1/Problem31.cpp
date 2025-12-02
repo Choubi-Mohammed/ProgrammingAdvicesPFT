@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/02 19:42:51 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/02 21:24:49 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/02 21:28:10 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,8 @@ void CopyArr(int srcArr[],int destArr[],int len)
 	int i = 0;
 	while(i < len)
 	{
-		destArr[i] = srcArr[i];
+		destArr[len - 1 - i] = srcArr[i];
 		i++;
-	}
-}
-void SwapNbrs(int &nbr1,int &nbr2)
-{
-	int tmp;
-
-	tmp = nbr1;
-	nbr1 = nbr2;
-	nbr2 = tmp;
-}
-
-void ReverseArr(int arr[],int len)
-{
-	int start = 0;
-	int end = len - 1;
-	while(start < len/2)
-	{
-		SwapNbrs(arr[start],arr[end-start]);
-		start++;
 	}
 }
 
@@ -88,11 +69,8 @@ int main()
 	PrintArr(srcArr,len);
 
 	CopyArr(srcArr,destArr,len);
-	cout << "copy Arr : ";
-	PrintArr(destArr,len);
-	ReverseArr(destArr,len);
 	cout << "Reverse Array : ";
 	PrintArr(destArr,len);
 
-
+	return 0;
 }
