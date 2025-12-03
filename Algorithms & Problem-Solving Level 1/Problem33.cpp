@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/03 17:34:25 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/03 17:49:37 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/03 18:58:23 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,25 @@ void FillArr(int arr[],int len)
 		i++;
 	}
 }
-
-void SearchNbr(int arr[],int len,int &SearchNbr)
+int RetSearchnbr()
 {
-	cout << "Please enter to search : ";
-	cin >> SearchNbr;
+	int SearchN;
+	cout <<"Please enter to search : ";
+	cin >> SearchN;
+
+	return SearchN;
+}
+int SearchNbr(int arr[],int len,int SearchNbr)
+{
 
 	int i = 0;
-	cout << "Number you looking for is : " << SearchNbr << endl;
 	while(i < len)
 	{
 		if (arr[i] == SearchNbr)
-		{
-			cout << "The number found in position in array: " << i << endl;
-			cout << "The Number found its order is : " << i+1 << endl;
-			break;
-		}
+			return i;
 		i++;
 	}
+	return -1;
 }
 
 void PrintArr(int arr[],int len)
@@ -76,8 +77,15 @@ int main()
 	FillArr(arr,len);
 	cout << "Array fo Lements is : ";
 	PrintArr(arr,len);
-
-	SearchNbr(arr,len,SearchN);
-
+	SearchN = RetSearchnbr();
+	cout << "Number you loking for is : " << SearchN << endl;
+	if(SearchNbr(arr,len,SearchN) != -1)
+	{
+		cout << "the number is found in position in Array : " << SearchNbr(arr,len,SearchN) << endl;
+		cout << "The number is found in order : " << SearchNbr(arr,len,SearchN) + 1 << endl;
+	}else
+	{
+		cout << "The number is not found !\n";
+	}
 	return 0;
 }
