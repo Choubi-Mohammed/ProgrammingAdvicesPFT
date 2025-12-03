@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/03 19:04:11 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/03 19:21:29 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/03 19:40:36 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ void readSearchNbr(int &SearchNbr)
 	cin >> SearchNbr;
 }
 
-bool CheckSearchnbr(int arr[],int len,int seaarchnbr)
+int FindInedxNumber(int arr[],int len,int seaarchnbr)
 {
 	int i = 0;
 	while(i < len)
 	{
 		if (arr[i] == seaarchnbr)
-			return true;
+			return i;
 		i++;
 	}
-	return false;
+	return -1;
+}
+bool isNumberINArr(int arr[],int len,int seaarchn)
+{
+	return FindInedxNumber(arr,len,seaarchn) != -1;
 }
 
 void PrintFoudOrNot(bool res)
@@ -84,7 +88,7 @@ int main()
 	PrintArr(arr,len);
 
 	readSearchNbr(seaarchn);
-	PrintFoudOrNot(CheckSearchnbr(arr,len,seaarchn));
+	PrintFoudOrNot(isNumberINArr(arr,len,seaarchn));
 
 	return 0;
 }
