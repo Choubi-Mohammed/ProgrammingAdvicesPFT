@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/06 11:59:38 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/06 12:25:25 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/06 12:31:01 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,50 +26,16 @@ void FillArr(int arr[],int &len)
 		i++;
 	}
 }
-void swap(int &nbr1,int &nbr2)
+bool IsPlindromArr(int arr[],int len)
 {
-	int tmp;
-
-	tmp = nbr1;
-	nbr1 = nbr2;
-	nbr2 = tmp;
-}
-void CopyArr(int src[],int dest[],int len)
-{
-	int i = 0;
-	while(i < len)
-	{
-		 dest[i] = src[i];
-		i++;
-	}
-}
-void ReversArr(int arr[],int len)
-{
-	int i = 0;
-
-	while(i <= len/2)
-	{
-		swap(arr[i],arr[len-1-i]);
-		i++;
-	}
-}
-
-void IsPlindromArr(int src[],int dest[],int len)
-{
-	CopyArr(src,dest,len);
-	ReversArr(dest,len);
 	int i =0;
 	while(i < len)
 	{
-		if (src[i] != dest[i])
-		{
-			cout << "This is Array Not a Palindrom Array \n";
-			return;
-		}
+		if(arr[i] != arr[len-1-i])
+			return false;
 		i++;
 	}
-	if(len > 1)
-		cout << "This Array is a Palindrom\n";
+	return true;
 }
 void PrintArr(int arr[],int len)
 {
@@ -84,13 +50,18 @@ void PrintArr(int arr[],int len)
 
 int main()
 {
-	int src[100],dest[100],len;
+	int src[100],len;
 
 	FillArr(src,len);
 
 	cout << "Array element : ";
 	PrintArr(src,len);
 
-	IsPlindromArr(src,dest,len);
+	if(IsPlindromArr(src,len)== true)
+		cout << "A Palindrom Array \n";
+	else
+		cout << "Not A Palindrom Array \n";
+
+	return 0;
 
 }
