@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/06 20:58:20 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/06 21:18:32 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/06 21:19:37 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int tt_ceil(float number)
 int main()
 {
 	float number =RetNumber();
-	cout << "My floor() Function  : " << tt_ceil(number) << endl;
-	cout << "C++ floor() Function : " << ceil(number) << endl;
+	cout << "My ceil() Function  : " << tt_ceil(number) << endl;
+	cout << "C++ ceil() Function : " << ceil(number) << endl;
 
 	return 0;
 }
