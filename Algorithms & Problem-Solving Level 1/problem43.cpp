@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/06 12:39:44 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/06 12:59:29 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/06 13:23:09 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int CountPosnumberArr(int arr[],int len)
 	int sum = 0;
 	while(i < len)
 	{
-		if (arr[i] > 0)
+		if (arr[i] >= 0)
 			sum++;
 		i++;
 	}
