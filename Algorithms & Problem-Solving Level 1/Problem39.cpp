@@ -1,80 +1,85 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                           ____    _____    */
-/*   Problem39.cpp                                          |___ \  |___ /    */
+/*   distinictN.cpp                                         |___ \  |___ /    */
 /*                                                            __) |   |_ \    */
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
-/*   Created: 2025/12/05 21:50:21 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/05 22:08:57 by shobeedev            tfaaty fi l3oolaa   */
+/*   Created: 2025/12/06 11:32:54 by shobeedev               shobee4ever      */
+/*   Updated: 2025/12/06 11:50:16 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 using namespace std;
-void FillArr(int arr[],int &len)
+
+void FillArr(int src[],int &lensrc)
 {
-	cout << "Len = ";
-	cin >> len;
+	cout << "please enter Length : ";
+	cin >> lensrc;
 
 	int i = 0;
-	while(i < len)
+	while(i < lensrc)
 	{
-		cout << "Please enter elemnt [" << i+1 << "] : ";
-		cin >> arr[i];
+		cout << "srcArr[" << i+1 << "] : ";
+		cin >> src[i];
 		i++;
 	}
 }
-bool chekcNumberarr(int number,int arr[],int len)
+int FindNPosArr(int number,int arr[],int len)
 {
 	int i = 0;
 	while(i < len)
 	{
-		if (number == arr[i])
-			return false;
+		if(number == arr[i])
+			return i;
 		i++;
 	}
-	return true;
-
+	return -1;
 }
-int distinictarr(int src[],int dest[],int len)
+bool IsNumberInarr(int number,int arr[],int len)
+{
+	return FindNPosArr(number,arr,len) != -1;
+}
+void AddElementArr(int number,int arr[],int &len)
+{
+	len++;
+	arr[len-1] = number;
+}
+void CopyDistinitNumber(int src[],int dest[],int lensrc,int &lendest)
 {
 	int i = 0;
-	int j = 0;
-	while(i < len)
+	while(i < lensrc)
 	{
-		if(chekcNumberarr(src[i],dest,len) == true )
-		{
-			dest[j] = src[i];
-			j++;
-		}
+		if (!IsNumberInarr(src[i],dest,lendest))
+			AddElementArr(src[i],dest,lendest);
 		i++;
 	}
-	return j;
 }
 void PrintArr(int arr[],int len)
 {
 	int i =0;
 	while(i < len)
 	{
-		cout << arr[i] << " ";
+		cout << arr[i] <<" ";
 		i++;
 	}
 	cout << "\n\n";
 }
 int main()
 {
-	int arr[100],len;
-	FillArr(arr,len);
+	int src[100],lensrc = 0;
+	int dest[100],lendest = 0;
 
-	cout << "Array element : ";
-	PrintArr(arr,len);
+	FillArr(src,lensrc);
 
-	int dest[100];
-	int lenDest = distinictarr(arr,dest,len);
+	cout << "Src Array Element : ";
+	PrintArr(src,lensrc);
 
-	cout << "Disitinict Array : ";
-	PrintArr(dest,lenDest);
+	CopyDistinitNumber(src,dest,lensrc,lendest);
 
+	cout << "Disinitc Number : ";
+	PrintArr(dest,lendest);
 
+	return 0;
 }
