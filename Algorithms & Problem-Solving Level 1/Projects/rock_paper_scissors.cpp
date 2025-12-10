@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                           ____    _____    */
-/*   GAME_RPS.cpp                                           |___ \  |___ /    */
+/*   rock_paper_scissors.cpp                                |___ \  |___ /    */
 /*                                                            __) |   |_ \    */
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/07 19:41:58 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/08 19:56:46 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/10 12:45:58 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -15,9 +15,10 @@ using namespace std;
 
 int RandNumber(int from,int to)
 {
-	int RandNumber = rand() % (to - from - 1) + from;
+	int RandNumber = rand() % (to - from + 1) + from;
 	return RandNumber;
 }
+
 int ReadRound()
 {
 	int NumberRound;
@@ -28,18 +29,16 @@ int ReadRound()
 }
 string ComputerCH(string arr[])
 {
-	int RandN = 0;
-	do
-	{
-		RandN = RandNumber(1,5);
-	}while(RandN > 3);
-
+	int RandN = RandNumber(1,3);
 	return arr[RandN - 1];
 }
 void ReadChois(int &choise)
 {
-	cout << "Please choise one 7ajra[1], War9a[2], Mi9as[3] ? : ";
-	cin >> choise;
+	do
+	{
+		cout << "Please choise one 7ajra[1], War9a[2], Mi9as[3] ? : ";
+		cin >> choise;
+	}while(choise <= 0 || choise >=4);
 }
 string PlayerCH(string arr[])
 {
@@ -108,6 +107,7 @@ void StartRound(string arr[],int NumberRound)
 	int NumberNoWinner = 0;
 	while(i < NumberRound)
 	{
+		cout << "\nRound [" << i+1 << "] begins : \n"<< endl;
 		string Player = PlayerCH(arr);
 		string Computer = ComputerCH(arr);
 		string winner = Winner(arr,Player,Computer);
