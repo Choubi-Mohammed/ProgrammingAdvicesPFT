@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/07 19:41:58 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/10 12:45:58 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/11 17:29:13 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -21,10 +21,12 @@ int RandNumber(int from,int to)
 
 int ReadRound()
 {
-	int NumberRound;
-	cout << "How Many Round Do You Want To Play : ";
-	cin >> NumberRound;
-
+	int NumberRound = 1;
+	do
+	{
+		cout << "How Many Round 1 to 10: ";
+		cin >> NumberRound;
+	}while(NumberRound <= 1 || NumberRound >=10);
 	return NumberRound;
 }
 string ComputerCH(string arr[])
