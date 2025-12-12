@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/11 17:56:02 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/11 21:30:39 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/12 17:09:02 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ enOperationLevel ReadOperationLevel()
 
 	return (enOperationLevel)opertion;
 }
+
 enOperationType ReadOperationType()
 {
 	int opertion = 1;
@@ -53,29 +54,31 @@ enOperationType ReadOperationType()
 	}while(opertion < 1 || opertion > 5);
 	return (enOperationType)opertion;
 }
+
 int QuestionLevel(enOperationLevel Level)
 {
 	switch(Level)
 	{
 	case enOperationLevel::Easy:
 		{
-			return RandNumber(1,29);
+			return RandNumber(1,10);
 			break;
 		}
 	case enOperationLevel::Med:
 		{
-			return RandNumber(30,59);
+			return RandNumber(11,50);
 			break;
 		}
 	case enOperationLevel::Hard:
 		{
-			return RandNumber(60,100);
+			return RandNumber(51,100);
 			break;
 		}
 	default :
 		return RandNumber(1,100);
 	}
 }
+
 char QuestionType(enOperationType Type)
 {
 	char arr[4] = {'+','-','*','/'};
@@ -105,6 +108,7 @@ char QuestionType(enOperationType Type)
 		return arr[RandNumber(1,4)-1];
 	}
 }
+
 int ResOperation(int number1,int number2,char Type)
 {
 	switch(Type)
@@ -132,6 +136,7 @@ int ResOperation(int number1,int number2,char Type)
 	}
 	return -99;
 }
+
 int ReadUserInput()
 {
 	int number;
@@ -154,6 +159,7 @@ void CheckResOperation(int number1,int number2,int res,stGameResult GameResult,i
 			 << "The Corect Answer is : " << res << endl;
 	}
 }
+
 void PrintQestion(int number1,int number2,char Type)
 {
 	cout << number1 << endl
@@ -161,6 +167,7 @@ void PrintQestion(int number1,int number2,char Type)
 		 << Type << endl
 		 << "___________\n";
 }
+
 int ReadNumberQestion()
 {
 	int number;
@@ -168,6 +175,7 @@ int ReadNumberQestion()
 	cin >> number;
 	return number;
 }
+
 void Question(enOperationLevel Level,enOperationType Type,stGameResult GameResult,int &CorectAns,int &WrongAns)
 {
 
@@ -182,6 +190,7 @@ void Question(enOperationLevel Level,enOperationType Type,stGameResult GameResul
 
 	CheckResOperation(number1,number2,Resutl,GameResult,CorectAns,WrongAns);
 }
+
 void NumberQestion(int number,enOperationLevel Level,enOperationType Type,int &CorectAns,int &WrongAns)
 {
 	int i = 1 ;
@@ -193,6 +202,7 @@ void NumberQestion(int number,enOperationLevel Level,enOperationType Type,int &C
 		i++;
 	}
 }
+
 string ConvertLvlToText(int Level)
 {
 	switch(Level)
@@ -216,6 +226,7 @@ string ConvertLvlToText(int Level)
 			return "Mix";
 	}
 }
+
 string ConvertTypeToText(int Type)
 {
 	switch(Type)
@@ -250,11 +261,12 @@ void GameResult(stGameResult GameRes)
 
 	string PassFail = "";
 	cout << "\n______________________________________________\n\n";
-	if(GameRes.NumberCorrectAns > GameRes.NumberWrongAns)
+	if(GameRes.NumberCorrectAns > GameRes.NumberWrongAns
+		|| GameRes.NumberWrongAns == int(GameRes.NumberQestion/2))
 		PassFail = "Pass\n";
 	else
 		PassFail = "Fail\n";
-	cout << "\t  Final Resutl is " << PassFail ;
+	cout << "\t    Final Resutl is " << PassFail ;
 	cout << "______________________________________________\n\n";
 	cout << "Number Of Qestion       :" << GameRes.NumberQestion << endl
 		 << "Question Level          :" << GameRes.Level << endl
@@ -263,6 +275,7 @@ void GameResult(stGameResult GameRes)
 		 << "Number of Wrong Answer  :" << GameRes.NumberWrongAns << endl
 		 << "_______________________________________________\n\n";
 }
+
 void start()
 {
 	stGameResult GameRes;
@@ -281,16 +294,19 @@ void start()
 	GameRes.NumberWrongAns = WrongAns;
 	GameResult(GameRes);
 }
+
 void math_game()
 {
-	bool Reapeat_Again = false;
+	char Reapeat_Again;
 	do
 	{
 		start();
-		cout << "Do You Want to Reapeat the Math Game ? YES[1], NO[0] : ";
+		cout << "Do You Want to Reapeat the Math Game ? Y/N?";
 		cin >> Reapeat_Again;
-	}while(Reapeat_Again == true);
+		cout << endl;
+	}while(Reapeat_Again == 'Y' || Reapeat_Again == 'y');
 }
+
 int main()
 {
 	srand((unsigned)time(NULL));
