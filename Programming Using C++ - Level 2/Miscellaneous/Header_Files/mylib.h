@@ -6,10 +6,10 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/16 17:35:55 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/16 17:47:34 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/16 18:00:28 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
-#pragma once
+#pragma once //hada ky ymn3 ank t3ayt liha ktr mn mra.
 #include <iostream>
 using namespace std;
 
@@ -19,4 +19,14 @@ namespace tt_mylib
 	{
 		cout << "Hello World!\n";
 	}
+}
+
+int tt_add(int number1,int number2)
+{
+	return number1 + number2;
+}
+
+int tt_mult(int number1,int number2)
+{
+	return number1*number2;
 }
