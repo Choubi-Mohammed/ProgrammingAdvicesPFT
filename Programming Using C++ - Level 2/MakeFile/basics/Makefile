@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                            ____    _____     #
+#    Makefile                                               |___ \  |___ /     #
+#                                                             __) |   |_ \     #
+#    By: shobeedev <https://shobee.space/>                   / __/   ___) |    #
+#                                                           |_____| |____/     #
+#    Created: 2025/12/24 20:54:18 by shobeedev               shobee4ever       #
+#    Updated: 2025/12/24 20:54:25 by shobeedev            tfaaty fi l3oolaa    #
+#                                                                              #
+# **************************************************************************** #
+
 # what is Make ?
 
-# - Make is a scripting tool is used for building executable 
+# - Make is a scripting tool is used for building executable
 # 	 according to commands
-# - Make tool parse an input file " Makefile" to define rules that it will run 
+# - Make tool parse an input file " Makefile" to define rules that it will run
 
 # - two types of Make ( GNU Make - Borland Make)
 ###########################################################################
@@ -11,8 +23,8 @@
 
 # to organize the compilation process
 # to run our tools and scripts
-# to automate the process 
-# to be fully control on the outputs and its time 
+# to automate the process
+# to be fully control on the outputs and its time
 #########################################################################
 
 # is it must to be Makefile ?
@@ -22,7 +34,7 @@
 #########################################################################
 # Basic Syntax
 
-#1) setting rule 
+#1) setting rule
 
 # Target : prerequisites
 #<tab> Recipe
@@ -33,11 +45,11 @@
 # files = main.cpp
 # files += hello.cpp
 
-#3) substitute variable 
+#3) substitute variable
 
 # echo $(files)
 
-#4) Disaple Echo 
+#4) Disaple Echo
 #	Using @ ex : @echo "hello"
 #5) Access Enviroment Variable
 #	it is accessible ex : echo $(PATH)
@@ -48,13 +60,13 @@
 #			 @rm *.o
 #			 @echo "`date` done" > log.txt
 
-#7) Access external scripts 
+#7) Access external scripts
 #	example
 # 		test:
 #			python analysis.py
 
 #########################################################################
-file = test.c 
+file = test.c
 
 display:
 	@echo $(PATH)
@@ -62,7 +74,7 @@ display:
 all: display
 	gcc $(file) -o c_program
 	g++ main.cpp -o cpp_program
-test: 
+test:
 	@python analysis.py
 build:
 	gcc $(file) -o test.o
