@@ -6,17 +6,21 @@
 #    By: shobeedev <https://shobee.space/>                   / __/   ___) |    #
 #                                                           |_____| |____/     #
 #    Created: 2025/12/24 15:32:03 by shobeedev               shobee4ever       #
-#    Updated: 2025/12/24 20:52:44 by shobeedev            tfaaty fi l3oolaa    #
+#    Updated: 2025/12/25 15:36:36 by shobeedev            tfaaty fi l3oolaa    #
 #                                                                              #
 # **************************************************************************** #
-GPP = g++
-MAIN = main.cpp
-SRC = src/lib.cpp
 
-all :
-	@$(GPP) $(MAIN) $(SRC) -o programe
-	@echo "Its done!"
+createlib: src/lib.o
+	ar rcs libmylib.a src/lib.o
 
+build: createlib
+	g++ main.cpp -L. -lmylib -o myprogram
+.PHONY : clean
 clean:
-	@rm -rf programe "*.out"
-	@echo "Its done on [`date`]"
+	@if [ -e myprogram ] ;\
+	then\
+		rm -rf src/*.o;\
+		rm -rf  *.o *.a;\
+		rm myprogram;\
+	fi;
+
