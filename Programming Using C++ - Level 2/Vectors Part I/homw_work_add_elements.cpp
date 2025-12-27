@@ -6,32 +6,45 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/27 12:26:38 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/27 12:34:46 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/27 12:46:25 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
 using namespace std;
+int ReadNumber()
+{
+	int nbr;
+	cout << "Enter a number : ";
+	cin >> nbr;
 
+	return nbr;
+}
+
+void vadd_element(vector <int> &vNumber)
+{
+	char Resp = 'n';
+	do
+	{
+		int nbr = ReadNumber();
+		vNumber.push_back(nbr);
+		cout << "Do you want to add more element ? Yes[y]/No[n] ";
+		cin >> Resp;
+	}while(Resp == 'Y' || Resp == 'y');
+}
+
+void Printvector(vector <int> vNumber)
+{
+	cout << "\n\nNumber : ";
+	for(int &n : vNumber)
+		cout << n << " ";
+}
 int main()
 {
 	vector <int> vNumber;
-	bool morenbr = false;
-	int nbr;
-	do
-	{
-		cout << "enter a number : ";
-		cin >> nbr;
-		vNumber.push_back(nbr);
-		cout << "do you want to insert more ? Yes[1],No[0] ";
-		cin >> morenbr;
-	}while(morenbr == true);
-
-	cout << "numbers : ";
-	for(int &n:vNumber)
-		cout << n << " ";
-
+	vadd_element(vNumber);
+	Printvector(vNumber);
 
 	return 0;
 }
