@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/27 12:26:38 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/27 12:48:21 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/27 12:49:56 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void vadd_element(vector <int> &vNumber)
 	{
 		int nbr = ReadNumber();
 		vNumber.push_back(nbr);
-		cout << "Do you want to add more element ? Yes[y]/No[n] ";
+		cout << "Do you want to add more element ? Y/N ";
 		cin >> Resp;
 	}while(Resp == 'Y' || Resp == 'y');
 }
