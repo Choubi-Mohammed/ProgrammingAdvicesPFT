@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2025/12/27 17:01:16 by shobeedev               shobee4ever      */
-/*   Updated: 2025/12/27 17:14:40 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2025/12/27 17:19:07 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int main()
 	tmpEmpl.lastName = "choubi";
 	tmpEmpl.salary = 9000;
 	vEmpl.push_back(tmpEmpl);
-	for(stEmpolye emp: vEmpl)
+
+	cout << "Emloyees vector : ";
+	for(stEmpolye &emp: vEmpl)
 	{
 		cout << "\nfirstName : " << emp.firstName << endl
 			 << "lastName  : " << emp.lastName << endl
