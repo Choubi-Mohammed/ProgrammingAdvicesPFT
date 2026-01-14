@@ -1,0 +1,45 @@
+✨The Summary✨
+
+Exceptions help prevent crashes when something goes wrong (like accessing out-of-range elements).
+
+But ⚠️ they should be used only when necessary, because they can slow down the program.
+
+
+exeption handling;
+
+try
+{
+    // Code that might throw an exception
+}
+catch (...)
+ {
+    // Action to handle the exception
+    // Example: cout << "Out of bounds\n";
+}
+
+for ex:
+
+int main()
+{
+
+	vector <int> num = { 1,2,3,4,5 };
+
+	try
+	{
+		cout << num.at(5);
+
+	}
+
+	catch (...)
+	{
+		cout << "out of bounds";
+	}
+
+}
+
+
+Use .at() with try–catch to safely handle out-of-range errors.
+
+try = risky code, catch = what to do if it fails.
+
+Good practice: use exceptions only when needed → don’t overuse them.
