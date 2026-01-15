@@ -1,0 +1,21 @@
+C++ String Methods:
+
+.length() → Returns the total number of characters in the string.
+
+.at(i) → Returns the character at position i.
+
+.append(text) → Adds text to the end of the string.
+
+.insert(pos, text) → Inserts text starting at position pos.
+
+.substr(pos, len) → Extracts a substring of length len starting at pos.
+
+.push_back(char) → Adds one character at the end.
+
+.pop_back() → Removes the last character.
+
+.find(text) → Finds the position of the first occurrence of text.
+
+.clear() → Deletes all characters from the string.
+
+.npos → Returned when the substring is not found.
