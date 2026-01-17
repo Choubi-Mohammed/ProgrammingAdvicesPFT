@@ -1,0 +1,62 @@
+SYSTEM CALL NOTES (C)
+
+--------------------------------
+ssize_t
+--------------------------------
+- ssize_t is a signed integer type.
+- Used as the return type of system calls like read() and write().
+
+Why ssize_t:
+- > 0 : number of bytes read or written
+-   0 : End Of File (EOF)
+-  -1 : error
+
+Example:
+ssize_t n;
+n = read(fd, buffer, 100);
+
+Reason:
+- size_t is unsigned → cannot represent -1
+- ssize_t can represent errors safely
+
+--------------------------------
+open() Permissions (mode)
+--------------------------------
+Function:
+int open(const char *pathname, int flags, mode_t mode);
+
+- The third argument (mode) is used ONLY with O_CREAT.
+- It defines permissions for the newly created file.
+
+Example:
+open("file.txt", O_CREAT | O_WRONLY, 0644);
+
+--------------------------------
+Permission Values (Octal)
+--------------------------------
+Permissions are written in octal (base 8).
+
+4 = read (r)
+2 = write (w)
+1 = execute (x)
+
+Examples:
+0777 → rwxrwxrwx
+0755 → rwxr-xr-x
+0644 → rw-r--r--
+0700 → rwx------
+
+Important:
+- Always use octal notation (start with 0).
+- 777 (decimal) ≠ 0777 (octal).
+- Real permissions are affected by umask.
+- If O_CREAT is not used, mode is ignored.
+
+--------------------------------
+Summary
+--------------------------------
+- ssize_t handles byte counts + errors.
+- open() permissions apply only when creating files.
+- Permissions must be written in octal.
+- Core knowledge for Linux system programming.
+
