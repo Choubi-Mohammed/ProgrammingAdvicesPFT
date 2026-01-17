@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/01/17 12:37:58 by shobeedev               shobee4ever      */
-/*   Updated: 2026/01/17 13:09:13 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/01/17 13:14:00 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void PrintArr(int arr[][100],int lenRow,int lenCol)
 	}
 }
 
-void sum_row_mat(int newArr[][100],int arr[][100],int lenRow,int lenCol)
+void sum_row_arr(int newArr[],int arr[][100],int lenRow,int lenCol)
 {
 	int i = 0;
 	while(i < lenRow)
@@ -65,24 +65,25 @@ void sum_row_mat(int newArr[][100],int arr[][100],int lenRow,int lenCol)
 			sum = sum + arr[i][j];
 			j++;
 		}
-		newArr[0][i] = sum;
+		newArr[i] = sum;
 		i++;
 	}
 }
-void PrintRow(int newArr[][100],int lenRow)
+void PrintRow(int newArr[],int lenRow)
 {
 	printf("the following matrix is sum of each row :\n");
 	int i = 0;
 	while(i < lenRow)
 	{
-		printf("sum of row %d is %d\n",i+1,newArr[0][i]);
+		printf("sum of row %d is %d\n",i+1,newArr[i]);
 		i++;
 	}
 }
 
 int main()
 {
-	int arr[100][100],newArr[100][100];
+	srand((unsigned)time(NULL));
+	int arr[100][100],newArr[100];
 	int lenRow,lenCol;
 
 	printf("row and col : ");
@@ -92,7 +93,7 @@ int main()
 
 	PrintArr(arr,lenRow,lenCol);
 
-	sum_row_mat(newArr,arr,lenRow,lenCol);
+	sum_row_arr(newArr,arr,lenRow,lenCol);
 
 	PrintRow(newArr,lenRow);
 
