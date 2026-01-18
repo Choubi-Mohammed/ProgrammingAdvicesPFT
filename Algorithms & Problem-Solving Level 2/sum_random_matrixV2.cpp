@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/01/17 11:58:42 by shobeedev               shobee4ever      */
-/*   Updated: 2026/01/17 13:33:40 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/01/18 14:13:03 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void fillArr(int arr[][100],int lenRow,int lenCol)
 		int j = 0;
 		while(j <lenCol)
 		{
-			arr[i][j] = random_int(1,100);
+			arr[i][j] = random_int(1,10);
 			j++;
 		}
 		i++;
