@@ -1,0 +1,53 @@
+lseek – Quick Resume (System Call)
+
+Purpose:
+lseek is a system call used to change the current position (cursor) of a file descriptor.
+It does NOT read or write data. It only moves the offset used by read/write.
+
+Prototype:
+off_t lseek(int fd, off_t offset, int whence);
+
+Parameters:
+- fd      : file descriptor returned by open()
+- offset  : number of bytes to move
+- whence  : reference point for offset
+
+whence values:
+- SEEK_SET : offset from beginning of file
+- SEEK_CUR : offset from current position
+- SEEK_END : offset from end of file
+
+Return value:
+- New file position (offset from start)
+- -1 on error
+
+Common uses:
+- Read/write from a specific position in a file
+- Skip parts of a file
+- Random access in files
+- Work with binary files
+- Get current file position
+
+Examples:
+- lseek(fd, 1000, SEEK_SET);  -> go to byte 1000
+- lseek(fd, 0, SEEK_END);     -> go to end of file
+- lseek(fd, -100, SEEK_END);  -> 100 bytes before end
+- lseek(fd, 0, SEEK_CUR);     -> get current position
+
+Important notes:
+- lseek works only with regular files
+- Does NOT work with pipes, sockets, stdin
+- read/write automatically move the file position
+- lseek manually overrides that position
+
+Relation to read/write:
+- read() / write() use the current file position
+- lseek() changes where the next read/write starts
+
+Level:
+Low-level I/O (kernel-level, system call)
+
+Summary:
+lseek = control over file position
+read/write = data transfer
+
