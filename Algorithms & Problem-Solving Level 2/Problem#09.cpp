@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/01/19 23:10:04 by shobeedev               shobee4ever      */
-/*   Updated: 2026/01/20 15:27:55 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/01/20 15:33:52 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,28 +55,30 @@ void Print2DArr(int arr[][100],int lenRow,int lenCol)
 	}
 }
 
-void PrintMidRow(int arr[][100],int lenCol)
+void PrintMidRow(int arr[][100],int lenRow,int lenCol)
 {
+	int MidRow = lenRow / 2;
 	int i = 0;
 	while(i < lenCol)
 	{
 		if (arr[1][i] < 10)
-			printf("0%d\t",arr[1][i]);
+			printf("0%d\t",arr[MidRow][i]);
 		else
-			printf("%d\t",arr[1][i]);
+			printf("%d\t",arr[MidRow][i]);
 		i++;
 	}
 }
 
-void PrintMidCol(int arr[][100],int lenRow)
+void PrintMidCol(int arr[][100],int lenRow,int lenCol)
 {
+	int MidCol = lenCol / 2;
 	int i = 0;
 	while(i < lenRow)
 	{
-		if (arr[i][1] < 10)
-			printf("0%d\t",arr[i][1]);
+		if (arr[i][MidCol] < 10)
+			printf("0%d\t",arr[i][MidCol]);
 		else
-			printf("%d\t",arr[i][1]);
+			printf("%d\t",arr[i][MidCol]);
 		i++;
 	}
 }
@@ -85,8 +87,10 @@ int main()
 {
 	srand((unsigned)time(NULL));
 	int arr[100][100];
-	int lenRow = 3;
-	int lenCol = 3;
+	int lenRow;
+	int lenCol;
+	printf("Row And Coloms : ");
+	scanf("%d %d",&lenRow,&lenCol);
 
 	Fill2DArr(arr,lenRow,lenCol);
 
@@ -94,10 +98,10 @@ int main()
 	Print2DArr(arr,lenRow,lenCol);
 
 	printf("\nMidle Row of Matrix : \n");
-	PrintMidRow(arr,lenCol);
+	PrintMidRow(arr,lenRow,lenCol);
 
 	printf("\nMidle Coloms of Matrix : \n");
-	PrintMidCol(arr,lenRow);
+	PrintMidCol(arr,lenRow,lenCol);
 
 
 	return 0;
