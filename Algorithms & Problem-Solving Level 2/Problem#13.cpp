@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/01/20 18:37:19 by shobeedev               shobee4ever      */
-/*   Updated: 2026/01/20 20:05:40 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/01/22 17:11:08 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void Print2Darray(int arr[][100],int lenRow,int lenCol)
 		i++;
 	}
 }
+/*
 bool checkCol(int arr[][100],int Row,int Col,int posSk)
 {
 	int i = 0;
@@ -78,6 +79,24 @@ bool CheckIdentity(int arr[][100],int lenRow,int lenCol)
 		i++;
 	}
 	return true;
+}*/
+bool CheckIdentity(int arr[][100],int lenRow,int lenCol)
+{
+	int i = 0;
+	while(i <lenRow)
+	{
+		int j = 0;
+		while(j < lenCol)
+		{
+			if(i == j && arr[i][j] != 1)
+				return false;
+			if(i != j && arr[i][j] != 0)
+				return false;
+			j++;
+		}
+		i++;
+	}
+	return true;
 }
 
 int main()
@@ -93,7 +112,7 @@ int main()
 	Print2Darray(arr,lenRow,lenCol);
 
 	if (CheckIdentity(arr,lenRow,lenCol) == true)
-		printf("Identity\n");
+		printf("Identity.\n");
 	else
-		printf("not Identity\n");
+		printf("Not Identity.\n");
 }
