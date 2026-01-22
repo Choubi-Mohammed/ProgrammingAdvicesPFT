@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/01/20 18:37:19 by shobeedev               shobee4ever      */
-/*   Updated: 2026/01/22 17:25:03 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/01/22 17:28:23 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ bool CheckIdentity(int arr[][100],int lenRow,int lenCol)
 		int j = 0;
 		while(j < lenCol)
 		{
-			if(i == j && arr[i][j] != arr[i][j])
+			if(i == j && arr[i][j] != arr[0][0])
 				return false;
 			if(i != j && arr[i][j] != 0)
 				return false;
