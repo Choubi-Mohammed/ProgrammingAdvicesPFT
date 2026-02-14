@@ -6,7 +6,7 @@
 /*   By: shobeedev <https://shobee.space/>                   / __/   ___) |   */
 /*                                                          |_____| |____/    */
 /*   Created: 2026/02/08 09:19:43 by shobeedev               shobee4ever      */
-/*   Updated: 2026/02/08 12:37:51 by shobeedev            tfaaty fi l3oolaa   */
+/*   Updated: 2026/02/08 12:40:21 by shobeedev            tfaaty fi l3oolaa   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ vector<string> spliteWord(string str,char sep)
 	{
 		if(str[i] != sep)
 			word+=str[i];
-		else //if(str[i] == sep)
+		else
 		{
 			if(word != "")
 			{
